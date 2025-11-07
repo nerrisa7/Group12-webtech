@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Cenviro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="header-left">
+                <h2 id="orgName">GreenTech Solutions</h2>
+            </div>
+            <div class="header-right">
+                <div class="user-info">
+                    <span class="material-symbols-outlined">person</span>
+                    <span id="userName">Demo User</span>
+                </div>
+                <a href="logout.html" class="logout-btn">Logout</a>
+            </div>
+        </header>
+
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="logo.png" alt="Cenviro Logo" class="logo-img">
+                <h2><a href="dashboard.html">Cenviro</a></h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html" class="nav-btn active">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="data_input.html" class="nav-btn">
+                            <span class="material-symbols-outlined">edit_note</span>
+                            Data Input
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reports.html" class="nav-btn">
+                            <span class="material-symbols-outlined">description</span>
+                            Reports
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="main-title">
+                <h2><span class="welcome">Welcome</span>, <span id="firstName">Demo</span>!</h2>
+            </div>
+
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="card-header">
+                        <span class="material-symbols-outlined card-icon score">eco</span>
+                        <div class="card-title">ESG Score</div>
+                    </div>
+                    <div class="card-value">72.5</div>
+                    <span class="score-badge good">Good</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="card-header">
+                        <span class="material-symbols-outlined card-icon environmental">co2</span>
+                        <div class="card-title">Total Emissions</div>
+                    </div>
+                    <div class="card-value">63.7</div>
+                    <div class="card-unit">tCO₂e</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="card-header">
+                        <span class="material-symbols-outlined card-icon environmental">bolt</span>
+                        <div class="card-title">Energy Usage</div>
+                    </div>
+                    <div class="card-value">12,500</div>
+                    <div class="card-unit">kWh</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="card-header">
+                        <span class="material-symbols-outlined card-icon environmental">water_drop</span>
+                        <div class="card-title">Water Usage</div>
+                    </div>
+                    <div class="card-value">450</div>
+                    <div class="card-unit">m³</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="card-header">
+                        <span class="material-symbols-outlined card-icon social">groups</span>
+                        <div class="card-title">Total Employees</div>
+                    </div>
+                    <div class="card-value">45</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="card-header">
+                        <span class="material-symbols-outlined card-icon social">diversity_3</span>
+                        <div class="card-title">Gender Diversity</div>
+                    </div>
+                    <div class="card-value">42.5%</div>
+                    <div class="card-unit">Female</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="card-header">
+                        <span class="material-symbols-outlined card-icon governance">gavel</span>
+                        <div class="card-title">Governance</div>
+                    </div>
+                    <div class="card-value">2/2</div>
+                    <div class="card-unit">Compliant</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="card-header">
+                        <span class="material-symbols-outlined card-icon environmental">recycling</span>
+                        <div class="card-title">Recycling Rate</div>
+                    </div>
+                    <div class="card-value">75.0%</div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3 class="section-title">Emissions Trend</h3>
+                <div class="emissions-chart">
+                    <div class="chart-bar">
+                        <div class="chart-bar-fill chart-bar-1"></div>
+                        <div class="chart-value">28.5 tCO₂e</div>
+                        <div class="chart-label">Nov 2024</div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-bar-fill chart-bar-2"></div>
+                        <div class="chart-value">31.2 tCO₂e</div>
+                        <div class="chart-label">Dec 2024</div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-bar-fill chart-bar-3"></div>
+                        <div class="chart-value">26.8 tCO₂e</div>
+                        <div class="chart-label">Jan 2025</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3 class="section-title">Quick Actions</h3>
+                <div class="quick-actions">
+                    <a href="data_input.html" class="btn-primary btn-link">Add New Data</a>
+                    <a href="reports.html" class="btn-secondary btn-link">View Reports</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        var user = JSON.parse(localStorage.getItem('user') || '{}');
+        if (!user.email) {
+            window.location.href = 'login.html';
+        } else {
+            document.getElementById('userName').textContent = user.name || 'User';
+            document.getElementById('orgName').textContent = user.org_name || 'Organization';
+            var firstName = (user.name || 'User').split(' ')[0];
+            document.getElementById('firstName').textContent = firstName;
+        }
+    </script>
+</body>
+</html>
+

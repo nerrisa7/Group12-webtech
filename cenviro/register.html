@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Cenviro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <aside class="auth-left">
+            <section>
+                <img src="logo.png" alt="Cenviro Logo" class="auth-logo">
+                <h2><a href="index.html">Cenviro</a></h2>
+                <p>ESG KPI Tracking for SMEs</p>
+            </section>
+        </aside>
+        
+        <main class="auth-right">
+            <section class="auth-form-section">
+                <div class="form-title">
+                    <h4>Create An Account</h4>
+                    <p>Start tracking your ESG performance</p>
+                </div>
+                
+                <div id="errorMsg" class="error-message hidden"></div>
+                
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="org_name">Organization Name</label>
+                        <input type="text" id="org_name" name="org_name" placeholder="Your Company Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sector">Business Sector</label>
+                        <select id="sector" name="sector" required>
+                            <option value="">Select Sector</option>
+                            <option value="Retail">Retail</option>
+                            <option value="Agriculture">Agriculture</option>
+                            <option value="Manufacturing">Manufacturing</option>
+                            <option value="Services">Services</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="size_band">Organization Size</label>
+                        <select id="size_band" name="size_band" required>
+                            <option value="">Select Size</option>
+                            <option value="1-10">1-10 employees</option>
+                            <option value="11-50">11-50 employees</option>
+                            <option value="51-250">51-250 employees</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name">Your Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@company.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Create Password</label>
+                        <input type="password" id="password" name="password" placeholder="••••••••" minlength="8" required>
+                        <ul class="password-requirements">
+                            <li>At least 8 characters long</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirm_password">Confirm Password</label>
+                        <input type="password" id="confirm_password" name="confirm_password" placeholder="••••••••" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn-primary">Sign Up</button>
+                        <a href="login.html" class="btn-secondary">Already have an account? Login</a>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        if (localStorage.getItem('user')) {
+            window.location.href = 'dashboard.html';
+        }
+
+        document.getElementById('registerForm').onsubmit = function(e) {
+            e.preventDefault();
+            var password = document.getElementById('password').value;
+            var confirm = document.getElementById('confirm_password').value;
+            var errorDiv = document.getElementById('errorMsg');
+
+            if (password !== confirm) {
+                errorDiv.textContent = 'Passwords do not match.';
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+
+            if (password.length < 8) {
+                errorDiv.textContent = 'Password must be at least 8 characters long.';
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+
+            localStorage.setItem('user', JSON.stringify({
+                email: document.getElementById('email').value,
+                name: document.getElementById('name').value,
+                org_name: document.getElementById('org_name').value
+            }));
+            
+            window.location.href = 'dashboard.html';
+        };
+    </script>
+</body>
+</html>
+

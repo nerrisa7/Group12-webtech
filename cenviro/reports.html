@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Cenviro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="header-left">
+                <h2 id="orgName">Micnerris Ltd</h2>
+            </div>
+            <div class="header-right">
+                <div class="user-info">
+                    <span class="material-symbols-outlined">person</span>
+                    <span id="userName">Nerrisa Abunu</span>
+                </div>
+                <a href="logout.html" class="logout-btn">Logout</a>
+            </div>
+        </header>
+
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="logo.png" alt="Cenviro Logo" class="logo-img">
+                <h2><a href="dashboard.html">Cenviro</a></h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html" class="nav-btn">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="data_input.html" class="nav-btn">
+                            <span class="material-symbols-outlined">edit_note</span>
+                            Data Input
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reports.html" class="nav-btn active">
+                            <span class="material-symbols-outlined">description</span>
+                            Reports
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="main-title">
+                <h2>ESG Reports</h2>
+            </div>
+
+            <div id="message" class="hidden"></div>
+
+            <div class="content-section">
+                <h3 class="section-title">Your ESG Data Summary</h3>
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="card-header">
+                            <span class="material-symbols-outlined card-icon environmental">eco</span>
+                            <div class="card-title">Environmental Data</div>
+                        </div>
+                        <div class="card-value">21</div>
+                        <div class="card-unit">7 KPIs tracked</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="card-header">
+                            <span class="material-symbols-outlined card-icon social">groups</span>
+                            <div class="card-title">Social Data</div>
+                        </div>
+                        <div class="card-value">10</div>
+                        <div class="card-unit">5 KPIs tracked</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="card-header">
+                            <span class="material-symbols-outlined card-icon governance">gavel</span>
+                            <div class="card-title">Governance Data</div>
+                        </div>
+                        <div class="card-value">8</div>
+                        <div class="card-unit">4 KPIs tracked</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3 class="section-title">Generate New Report</h3>
+                <form id="reportForm" class="report-form">
+                    <div class="form-grid form-grid-2col">
+                        <div class="form-group">
+                            <label for="report_period_start">Report Period Start</label>
+                            <input type="date" id="report_period_start" name="report_period_start" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="report_period_end">Report Period End</label>
+                            <input type="date" id="report_period_end" name="report_period_end" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <span class="material-symbols-outlined btn-with-icon">add_circle</span>
+                        Generate Report
+                    </button>
+                </form>
+            </div>
+
+            <div class="content-section">
+                <h3 class="section-title">Generated Reports</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Report ID</th>
+                            <th>Period</th>
+                            <th>ESG Score</th>
+                            <th>Generated Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1</td>
+                            <td>Jan 1, 2025 - Jan 31, 2025</td>
+                            <td><strong class="score-value">72.5</strong> <span class="score-badge good">Good</span></td>
+                            <td>Jan 31, 2025 14:30</td>
+                            <td><span class="status-complete">Complete</span></td>
+                        </tr>
+                        <tr>
+                            <td>#2</td>
+                            <td>Dec 1, 2024 - Dec 31, 2024</td>
+                            <td><strong class="score-value">68.3</strong> <span class="score-badge good">Good</span></td>
+                            <td>Dec 31, 2024 16:15</td>
+                            <td><span class="status-complete">Complete</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="content-section">
+                <h3 class="section-title">UN Sustainable Development Goals (SDG) Mapping</h3>
+                <p class="sdg-intro">Your ESG KPIs contribute to the following UN SDGs:</p>
+                
+                <div class="sdg-grid">
+                    <div class="sdg-card sdg-card-7">
+                        <strong class="sdg-name">SDG 7: Affordable & Clean Energy</strong>
+                        <p class="sdg-title">Your energy consumption and emissions tracking</p>
+                    </div>
+                    
+                    <div class="sdg-card sdg-card-13">
+                        <strong class="sdg-name">SDG 13: Climate Action</strong>
+                        <p class="sdg-title">Your carbon emissions monitoring</p>
+                    </div>
+                    
+                    <div class="sdg-card sdg-card-5">
+                        <strong class="sdg-name">SDG 5: Gender Equality</strong>
+                        <p class="sdg-title">Your diversity and inclusion metrics</p>
+                    </div>
+                    
+                    <div class="sdg-card sdg-card-8">
+                        <strong class="sdg-name">SDG 8: Decent Work</strong>
+                        <p class="sdg-title">Your employee training and safety tracking</p>
+                    </div>
+                    
+                    <div class="sdg-card sdg-card-16">
+                        <strong class="sdg-name">SDG 16: Peace & Justice</strong>
+                        <p class="sdg-title">Your governance and ethics policies</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function showMessage(text, type) {
+            var msgDiv = document.getElementById('message');
+            msgDiv.textContent = text;
+            msgDiv.className = 'alert ' + type;
+            msgDiv.classList.remove('hidden');
+            setTimeout(function() {
+                msgDiv.classList.add('hidden');
+            }, 3000);
+        }
+
+        document.getElementById('reportForm').onsubmit = function(e) {
+            e.preventDefault();
+            showMessage('Report generated successfully!', 'success');
+        };
+    </script>
+</body>
+</html>
+

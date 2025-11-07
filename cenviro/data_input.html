@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Input - Cenviro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="header-left">
+                <h2 id="orgName">Organization</h2>
+            </div>
+            <div class="header-right">
+                <div class="user-info">
+                    <span class="material-symbols-outlined">person</span>
+                    <span id="userName">User</span>
+                </div>
+                <a href="logout.html" class="logout-btn">Logout</a>
+            </div>
+        </header>
+
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="logo.png" alt="Cenviro Logo" class="logo-img">
+                <h2><a href="dashboard.html">Cenviro</a></h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html" class="nav-btn">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="data_input.html" class="nav-btn active">
+                            <span class="material-symbols-outlined">edit_note</span>
+                            Data Input
+                        </a>
+                    </li>
+                    <li>
+                        <a href="reports.html" class="nav-btn">
+                            <span class="material-symbols-outlined">description</span>
+                            Reports
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="main-title">
+                <h2>ESG Data Input</h2>
+            </div>
+
+            <div id="message" class="hidden"></div>
+
+            <div class="content-section">
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="openTab(event, 'environmental')">
+                        <span class="material-symbols-outlined tab-icon">eco</span>
+                        Environmental
+                    </button>
+                    <button class="tab-btn" onclick="openTab(event, 'social')">
+                        <span class="material-symbols-outlined tab-icon">groups</span>
+                        Social
+                    </button>
+                    <button class="tab-btn" onclick="openTab(event, 'governance')">
+                        <span class="material-symbols-outlined tab-icon">gavel</span>
+                        Governance
+                    </button>
+                </div>
+
+                <div id="environmental" class="tab-content active">
+                    <h3 class="section-title">Environmental KPIs</h3>
+                    <form id="envForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="period_start">Period Start Date *</label>
+                                <input type="date" id="period_start" name="period_start" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="period_end">Period End Date *</label>
+                                <input type="date" id="period_end" name="period_end" required>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="kpi_electricity_kwh">Electricity Consumption (kWh)</label>
+                                <input type="text" step="0.01" id="kpi_electricity_kwh" name="kpi_electricity_kwh" placeholder="e.g., 12500">
+                                <p class="help-text">Total electricity used in the period</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="kpi_fuel_liters">Fuel Consumption (Liters)</label>
+                                <input type="text" step="0.01" id="kpi_fuel_liters" name="kpi_fuel_liters" placeholder="e.g., 850">
+                                <p class="help-text">Diesel, petrol, or other fuels</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="kpi_water_m3">Water Usage (m³)</label>
+                                <input type="text" step="0.01" id="kpi_water_m3" name="kpi_water_m3" placeholder="e.g., 450">
+                                <p class="help-text">Total water consumption</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="kpi_waste_kg">Total Waste (kg)</label>
+                                <input type="text" step="0.01" id="kpi_waste_kg" name="kpi_waste_kg" placeholder="e.g., 2200">
+                                <p class="help-text">Total waste generated</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="kpi_recycled_kg">Recycled Waste (kg)</label>
+                                <input type="text" step="0.01" id="kpi_recycled_kg" name="kpi_recycled_kg" placeholder="e.g., 1650">
+                                <p class="help-text">Amount of waste recycled</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="kpi_scope1_tco2e">Scope 1 Emissions (tCO₂e)</label>
+                                <input type="text" step="0.01" id="kpi_scope1_tco2e" name="kpi_scope1_tco2e" placeholder="e.g., 28.5">
+                                <p class="help-text">Direct emissions from owned sources</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="kpi_scope2_tco2e">Scope 2 Emissions (tCO₂e)</label>
+                                <input type="text" step="0.01" id="kpi_scope2_tco2e" name="kpi_scope2_tco2e" placeholder="e.g., 35.2">
+                                <p class="help-text">Indirect emissions from purchased energy</p>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button type="submit" class="btn-submit">Submit Data</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="social" class="tab-content">
+                    <h3 class="section-title">Social KPIs</h3>
+                    <form id="socialForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="period_start_social">Period Start Date *</label>
+                                <input type="date" id="period_start_social" name="period_start" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="period_end_social">Period End Date *</label>
+                                <input type="date" id="period_end_social" name="period_end" required>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="kpi_total_employees">Total Employees</label>
+                                <input type="text" id="kpi_total_employees" name="kpi_total_employees" placeholder="e.g., 45">
+                                <p class="help-text">Total number of employees</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="kpi_female_pct">Female Employees (%)</label>
+                                <input type="text" step="0.1" id="kpi_female_pct" name="kpi_female_pct" placeholder="e.g., 42.5">
+                                <p class="help-text">Percentage of female employees</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="kpi_training_hours">Training Hours</label>
+                                <input type="text" step="0.01" id="kpi_training_hours" name="kpi_training_hours" placeholder="e.g., 320">
+                                <p class="help-text">Total employee training hours</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="kpi_incidents">Safety Incidents</label>
+                                <input type="text" id="kpi_incidents" name="kpi_incidents" placeholder="e.g., 0">
+                                <p class="help-text">Number of workplace safety incidents</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="kpi_community_hours">Community Service Hours</label>
+                                <input type="text" step="0.01" id="kpi_community_hours" name="kpi_community_hours" placeholder="e.g., 85">
+                                <p class="help-text">Hours spent on community initiatives</p>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button type="submit" class="btn-submit">Submit Data</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="governance" class="tab-content">
+                    <h3 class="section-title">Governance KPIs</h3>
+                    <form id="govForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="period_start_gov">Period Start Date *</label>
+                                <input type="date" id="period_start_gov" name="period_start" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="period_end_gov">Period End Date *</label>
+                                <input type="date" id="period_end_gov" name="period_end" required>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="kpi_board_meetings">Board Meetings</label>
+                                <input type="text" id="kpi_board_meetings" name="kpi_board_meetings" placeholder="e.g., 2">
+                                <p class="help-text">Number of board meetings held</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="kpi_independent_directors_pct">Independent Directors (%)</label>
+                                <input type="text" step="0.1" id="kpi_independent_directors_pct" name="kpi_independent_directors_pct" placeholder="e.g., 40">
+                                <p class="help-text">Percentage of independent board members</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="kpi_code_of_conduct">Code of Conduct</label>
+                                <select id="kpi_code_of_conduct" name="kpi_code_of_conduct">
+                                    <option value="">Select</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                                <p class="help-text">Organization has a code of conduct</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="kpi_anti_corruption_training">Anti-Corruption Training</label>
+                                <select id="kpi_anti_corruption_training" name="kpi_anti_corruption_training">
+                                    <option value="">Select</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                                <p class="help-text">Employees received anti-corruption training</p>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button type="submit" class="btn-submit">Submit Data</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        var user = JSON.parse(localStorage.getItem('user') || '{}');
+        document.getElementById('userName').textContent = user.name || 'User';
+        document.getElementById('orgName').textContent = user.org_name || 'Organization';
+
+        function openTab(evt, tabName) {
+            var tabs = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            var btns = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function showMessage(text, type) {
+            var msg = document.getElementById('message');
+            msg.textContent = text;
+            msg.className = 'alert ' + type;
+            msg.classList.remove('hidden');
+            setTimeout(function() {
+                msg.classList.add('hidden');
+            }, 3000);
+        }
+
+        document.getElementById('envForm').onsubmit = function(e) {
+            e.preventDefault();
+            showMessage('Data saved successfully!', 'success');
+        };
+
+        document.getElementById('socialForm').onsubmit = function(e) {
+            e.preventDefault();
+            showMessage('Data saved successfully!', 'success');
+        };
+
+        document.getElementById('govForm').onsubmit = function(e) {
+            e.preventDefault();
+            showMessage('Data saved successfully!', 'success');
+        };
+    </script>
+</body>
+</html>
+
