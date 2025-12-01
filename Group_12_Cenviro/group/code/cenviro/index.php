@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cenviro - ESG KPI Tracking</title>
+    <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="homepage">
+    <section class="hero-section">
+        <h1>Cenviro</h1>
+        <p>ESG KPI Tracking Made Simple for Small and Medium Enterprises</p>
+        <div class="cta-buttons">
+            <a href="register.php" class="cta-btn cta-primary">Get Started</a>
+            <a href="login.php" class="cta-btn cta-outline">Login</a>
+            <a href="https://enattipoe-tnksu.wordpress.com/" target="_blank" class="cta-btn cta-outline">About Us</a>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <h2>Why Choose Cenviro?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <span class="material-symbols-outlined">edit_note</span>
+                </div>
+                <h3>Easy KPI Input</h3>
+                <p>Quickly record your Environmental, Social, and Governance metrics.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <span class="material-symbols-outlined">dashboard</span>
+                </div>
+                <h3>Real-time Dashboard</h3>
+                <p>Visualize your ESG performance with interactive charts and scores.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <span class="material-symbols-outlined">description</span>
+                </div>
+                <h3>PDF Reports</h3>
+                <p>Generate professional ESG reports for stakeholders.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Input Your Data</h3>
+                <p>Enter your ESG KPIs across categories.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>View Your Score</h3>
+                <p>Get an automated ESG score based on benchmarks.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Generate Reports</h3>
+                <p>Download reports to share with stakeholders.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Cenviro. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
